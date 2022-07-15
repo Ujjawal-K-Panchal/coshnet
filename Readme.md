@@ -21,8 +21,8 @@
 		</li>
 		<li> Run setup.py:
 			<ul>
-				<li> with <code>CUDA</code>: <code>python setup.py</code> </li>
-				<li> without <code>CUDA</code>: <code>python setup.py --no-cuda</code> </li>
+				<li> with <code>CUDA</code>: <code>python <a href = "./setup.py">setup.py</a></code> </li>
+				<li> without <code>CUDA</code>: <code>python <a href = "./setup.py">setup.py</a> --no-cuda</code> </li>
 				<li> use <code>--no-venv</code> to disable venv check (e.g. inside a docker) </li>
 			</ul>
 		</li>	
@@ -66,5 +66,6 @@
 	</ol>
 	</div>
 </details>
+
 # Cite
 
