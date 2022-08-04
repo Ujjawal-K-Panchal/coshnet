@@ -1,0 +1,44 @@
+In Anaconda prompt or Terminal(macos) or Bash:
+Python 3.8.5
+
+1. python -m pip install --upgrade pip.
+2. python -m venv venv4coshnet
+3. activate venv4shearlets
+   mac/linux: source venv4shearlets/bin/activate
+   win10: venv4shearlets\Scripts\activate
+Note: it is very important to locate venv directly under `root`. Some path logic relies on it.
+
+4. pip install wheel (should be part of Miniconda 3.8x if on win10)
+5. pip install -r requirements.txt
+6. Following commands need CUDA and Pytorch:
+
+Get PyTorch and CUDA:
+
+   CUDA (check version appropriate for PyTorch - e.g. 10.2 for 1.6)
+   ** cuda 11.1.1 070421 (mck)
+
+   PyTorch Macos/Linux
+   -------------------
+   Do nothing, 'torch torchvision torchxrayvision' is already in requirements.txt.
+
+   PyTorch Win10
+   -------------
+   pip install torch===1.5.1 torchvision===0.6.1 -f https://download.pytorch.org/whl/torch_stable.html
+   pip install torchxrayvision
+
+
+   PyTorch 1.6 cuda 10.2
+   ---------------------
+   pip install torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+   ** PyTorch 1.7.1 cuda 11.1
+   --------------------------
+   pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+
+   PyTorch 1.8, cuda 11.1
+   ----------------------
+   pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+   PyTorch 1.9, cuda 11.1
+   ----------------------
+   pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio===0.9.0 -f https://download.pytorch.org/whl/torch_stable.html

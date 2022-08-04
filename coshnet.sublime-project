@@ -1,0 +1,44 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.sln",
+				"*.pyproj",
+				"*.eml",
+				"*.tex",
+				"*.jpg",
+				"*.html",
+				"*.pickle",
+				"*.npy",
+				"*.pic",
+				"*.dat",
+				"**.pth",
+				"*.ipynb",
+				"*.blg",
+				"*.bbl",
+				"*.bib",
+				"*.pkl",
+				"*.mp4",
+				"*.mat",
+				"*.csv",
+				"*.aux",
+				"*.json",
+				"*.js",
+				"*.svg",
+				"*.npz",
+			],
+			"folder_exclude_patterns":
+			[
+				".vs",
+				".ipynb_checkpoints",
+				"__pycache__",
+				"build/",
+				"*.egg-info",
+			],
+			"path": "."
+		}
+	],
+	"virtualenv": "D:\\Dev\\SigProc\\onsen\\venv4coshnet"
+}

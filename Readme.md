@@ -1,13 +1,39 @@
 <div align="center">
 	<a href = "https://arxiv.org/">
-		<img width = "850" src = "./imgs/coshnet-logo.svg"></a></img>
+		<img width = "300" src = "./imgs/coshnet-logo.svg"></a></img>
 		
 <div><p>Authors: Manny Ko, Ujjawal K. Panchal, Héctor Andrade Loarca, Andres Mendez-Vazquez</p></div>
 </div>
 
+# CoShNet Architecture
 
+<details open>
+<summary>Architecture</summary>
+<img width = "850" src = "./imgs/CoShNet-TNR.png">
+
+CoShNet is a fully complex hybrid neural network. We use the CoShREM (now call SymFD) <code><a href>http://www.math.uni-bremen.de/cda/software.html</code>
+signal transform to produce a stable embedding. The network operates entirely in $\mathbb{C}$ domain to take advantage of unique properties of CVNNs.
+
+<details> <summary>Architecture Brief</summary>
+
+<ol>
+	<li> Input is any $32\times32 \in \mathbb{R}$ image. </li>
+	<li> Input is CoShREM transformed to produce a $32\times32\times20 \in \mathbb{C}$ output. </li>
+	<li> CoShREM output is convolved with the $2$ cplx-conv layers.
+
+Each cplx-conv layer is composted of := 
+$\mathbb{C}$-Conv + $\mathbb{C}$-ReLU + $\mathbb{C}$-AvgPool2d.</li>
+	<li>The response is flattened and passed through $2$ cplx-linear layers.
+	
+Each cplx-linear layer is composted of := $\mathbb{C}$-linear layer + $\mathbb{C}$-ReLU.
+</li>
+	<li>The $\mathbb{R}$, $\mathbb{I}$ components are stacked together (see shape) and passed through $1$ final $\mathbb{R}$-linear layer.</li>
+</ol>
+</details>
+</details>
 
 # Setup
+Python 3.8.x and newer are supported:
 
 <details>
 	<summary>Automated Setup</summary>
@@ -38,19 +64,21 @@
 </details>
 
 # Contents
+<div>
 <details>
 	<summary>Contents List</summary>
 	<ol>
-		<li> <a href = "./code/">code</a>: Contains all code essential to run experiments in this repo. </li>
-		<li> <a href = "./libs/">libs</a>: Contains all custom-made and collected libs and modules we use for our experiments.
+		<li> <code><a href = "./code/">code/</a></code>: Contains all code essential to run experiments in this repo. </li>
+		<li> <code><a href = "./libs/">libs/</a></code>: Contains all custom-made and collected libs and modules we use for our experiments.
 						   (Installed automatically in setup.txt)</li>
-		<li> <a href = "./data/">data</a>: Folder where datasets are present. Created automatically when running for first time.</li>
-		<li> <a href = "./setup.txt">setup</a>: Steps for setting up repo.</li>
-		<li> <a href = "./requirements.txt">requirements</a>: requirements file.</li>
-		<li> <a href = "./changelog.md">changelog</a>: all changes relevant to releases, branch prs,
+		<li> <code><a href = "./data/">data/</a></code>: Folder where datasets are present. Created automatically when running for first time.</li>
+		<li> <code><a href = "./setup.txt">setup.txt</a></code>: Steps for setting up repo.</li>
+		<li> <code><a href = "./requirements.txt">requirements.txt</a></code>: requirements file.</li>
+		<li> <code><a href = "./changelog.md">changelog.md</a></code>: all changes relevant to releases, branch prs,
 							       or any other general notes needed for maintenance.</li>
 	</ol>
 </details>
+</div>
 
 # How to Run?
 <details>
@@ -59,13 +87,27 @@
 	<div>
 	<ol>
 		<li> Running our models:  run: <code>python <a href = "./code/test_fashion.py">test_fashion.py</a> --help</code>
-		     to see several arguments you are allowed to tune.
-		     The default will use the 10k test set of Fashion to train and the 60k training set to test. </li>
+		     to see several arguments you are allowed to tune. (Default run (10k20E) gets 89.2% on <code>RTX 2080 Super</code>).
+		     The default will use the 10k test set of Fashion to train for 20 epochs, and the 60k training set to test. </li>
 		<li> Running resnet(18|50): run: <code>python <a href = "./code/test_resnet.py">test_resnet.py</a> --help</code>
-		     to see several arguments you are allowed to set. </li>
+		     to see several arguments you are allowed to set. (Default run (RN18, 10k20E) gets 88.3% on <code>RTX 2080 Super</code>).</li>
 	</ol>
 	</div>
 </details>
 
+# Some Results
+| Model | Epochs | Parameters | Size Ratio | Top-1 Accuracy (60k)| Top-1 Accuracy (10k) |
+|-------|:------:|:----------:|:----------:|:-------------------:|:--------------------:|
+| ResNet-18| 100| 11.18M| 229| 91.8%| 88.3%|
+| ResNet-50| 100| 23.53M| 481| 90.7%| 87.8%|
+| CoShNet(base)|20|1.37M|28|**92.2%**|**89.2%**|
+| CoShNet (tiny)|20|**49.99K**|1|91.6%|88.0%|
+
+_Note: 60k = train on train-set (60k observations), test on test-set (10k observations). 10k = vice-versa. K or k = 1000, M = Million._
+
 # Cite
 
+# License
+<div>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+</div>
