@@ -18,7 +18,6 @@
 
 
 ## TODO:
-- [] `TODO`: once you are putting in new repo, change the name to new repo name in `shnetutil.projconfig.py`.
 
 ## Note to devs:
 1. Leaving concept of `colorspace in shnetutil`. It will be easy if we want to iteratively add stuff to this, but if we donot, having it in, does not hurt and saves us trouble to refactor.
