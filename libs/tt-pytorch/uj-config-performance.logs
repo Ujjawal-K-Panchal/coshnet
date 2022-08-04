@@ -1,0 +1,76 @@
+Full Network.
+---
+Sequential(
+  (0): Embedding(25000, 256)
+  (1): LSTM_Classifier(
+    (rnn): LSTM(256, 128, num_layers=2, dropout=0.5, bidirectional=True)
+    (fc): Linear(in_features=256, out_features=1, bias=True)
+    (dropout): Dropout(p=0.5, inplace=False)
+  )
+)
+| Epoch: 01 | Train Loss: 0.679 | Train Acc: 56.12% | Val. Loss: 0.646 | Val. Acc: 62.01% | Test Loss: 0.647 | Test Acc: 61.94% |
+TEST ACCURACY: 61.94
+Compression rate: 1.0
+#params = 7190785
+| Epoch: 02 | Train Loss: 0.677 | Train Acc: 57.52% | Val. Loss: 0.653 | Val. Acc: 61.41% | Test Loss: 0.657 | Test Acc: 60.76% |
+TEST ACCURACY: 61.94
+| Epoch: 03 | Train Loss: 0.621 | Train Acc: 66.00% | Val. Loss: 0.702 | Val. Acc: 64.92% | Test Loss: 0.697 | Test Acc: 65.12% |
+TEST ACCURACY: 65.12
+| Epoch: 04 | Train Loss: 0.610 | Train Acc: 68.14% | Val. Loss: 0.620 | Val. Acc: 64.71% | Test Loss: 0.624 | Test Acc: 64.58% |
+TEST ACCURACY: 65.12
+| Epoch: 05 | Train Loss: 0.547 | Train Acc: 73.41% | Val. Loss: 0.673 | Val. Acc: 67.90% | Test Loss: 0.665 | Test Acc: 68.55% |
+TEST ACCURACY: 68.55
+| Epoch: 06 | Train Loss: 0.483 | Train Acc: 78.63% | Val. Loss: 0.577 | Val. Acc: 77.75% | Test Loss: 0.581 | Test Acc: 77.39% |
+TEST ACCURACY: 77.39
+| Epoch: 07 | Train Loss: 0.434 | Train Acc: 80.65% | Val. Loss: 0.549 | Val. Acc: 79.56% | Test Loss: 0.557 | Test Acc: 79.78% |
+TEST ACCURACY: 79.78
+| Epoch: 08 | Train Loss: 0.452 | Train Acc: 79.93% | Val. Loss: 0.553 | Val. Acc: 77.50% | Test Loss: 0.552 | Test Acc: 77.57% |
+TEST ACCURACY: 79.78
+| Epoch: 09 | Train Loss: 0.402 | Train Acc: 82.76% | Val. Loss: 0.576 | Val. Acc: 78.56% | Test Loss: 0.564 | Test Acc: 78.58% |
+TEST ACCURACY: 79.78
+| Epoch: 10 | Train Loss: 0.360 | Train Acc: 85.17% | Val. Loss: 0.696 | Val. Acc: 77.86% | Test Loss: 0.678 | Test Acc: 78.22% |
+TEST ACCURACY: 79.78
+Compression rate: 1.0
+#params = 7190785
+
+
+TT Network.
+---
+Sequential(
+  (0): TTEmbedding(
+    (parameters): ParameterList(
+        (0): Parameter containing: [torch.cuda.FloatTensor of size 1x25x4x16 (GPU 0)]
+        (1): Parameter containing: [torch.cuda.FloatTensor of size 16x30x8x16 (GPU 0)]
+        (2): Parameter containing: [torch.cuda.FloatTensor of size 16x40x8x1 (GPU 0)]
+    )
+  )
+  (1): LSTM_Classifier(
+    (rnn): LSTM(256, 128, num_layers=2, dropout=0.5, bidirectional=True)
+    (fc): Linear(in_features=256, out_features=1, bias=True)
+    (dropout): Dropout(p=0.5, inplace=False)
+  )
+)
+| Epoch: 01 | Train Loss: 0.693 | Train Acc: 50.24% | Val. Loss: 0.690 | Val. Acc: 54.93% | Test Loss: 0.691 | Test Acc: 53.97% |
+TEST ACCURACY: 53.97
+Compression rate: 93.89671361502347
+#params = 858945
+| Epoch: 02 | Train Loss: 0.687 | Train Acc: 54.87% | Val. Loss: 0.691 | Val. Acc: 51.53% | Test Loss: 0.691 | Test Acc: 51.45% |
+TEST ACCURACY: 53.97
+| Epoch: 03 | Train Loss: 0.648 | Train Acc: 64.48% | Val. Loss: 0.634 | Val. Acc: 66.22% | Test Loss: 0.637 | Test Acc: 65.74% |
+TEST ACCURACY: 65.74
+| Epoch: 04 | Train Loss: 0.620 | Train Acc: 66.28% | Val. Loss: 0.692 | Val. Acc: 50.01% | Test Loss: 0.692 | Test Acc: 49.99% |
+TEST ACCURACY: 65.74
+| Epoch: 05 | Train Loss: 0.640 | Train Acc: 63.77% | Val. Loss: 0.604 | Val. Acc: 67.81% | Test Loss: 0.613 | Test Acc: 66.46% |
+TEST ACCURACY: 66.46
+| Epoch: 06 | Train Loss: 0.658 | Train Acc: 62.00% | Val. Loss: 0.687 | Val. Acc: 53.98% | Test Loss: 0.688 | Test Acc: 54.09% |
+TEST ACCURACY: 66.46
+| Epoch: 07 | Train Loss: 0.665 | Train Acc: 59.89% | Val. Loss: 0.652 | Val. Acc: 61.39% | Test Loss: 0.660 | Test Acc: 60.04% |
+TEST ACCURACY: 66.46
+| Epoch: 08 | Train Loss: 0.634 | Train Acc: 64.54% | Val. Loss: 0.623 | Val. Acc: 65.82% | Test Loss: 0.635 | Test Acc: 63.91% |
+TEST ACCURACY: 66.46
+| Epoch: 09 | Train Loss: 0.609 | Train Acc: 67.61% | Val. Loss: 0.622 | Val. Acc: 65.93% | Test Loss: 0.634 | Test Acc: 64.55% |
+TEST ACCURACY: 66.46
+| Epoch: 10 | Train Loss: 0.601 | Train Acc: 69.69% | Val. Loss: 0.591 | Val. Acc: 68.07% | Test Loss: 0.598 | Test Acc: 67.35% |
+TEST ACCURACY: 67.35
+Compression rate: 93.89671361502347
+#params = 858945
