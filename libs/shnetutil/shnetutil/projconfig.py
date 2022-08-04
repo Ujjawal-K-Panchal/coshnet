@@ -12,7 +12,7 @@ import re
 from pathlib import Path, PurePosixPath
 from pyutils import dirutils
 
-kOurRepo="coshnet-refactoring" #TODO: once you are putting in new repo, change the name to new repo
+kOurRepo="coshnet"
 
 def getRepoRoot():
 	""" return <srcroot>/onsen where onsen is located - e.g. '<srcroot>/onsen' 
