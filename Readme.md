@@ -92,6 +92,7 @@ Python 3.8.x and newer are supported:
 		<li> Running resnet(18|50): run: <code>python <a href = "./code/test_resnet.py">test_resnet.py</a> --help</code>
 		     to see several arguments you are allowed to set. (Default run (RN18, 10k20E) gets 88.3% on <code>RTX 2080 Super</code>).</li>
 	</ol>
+		Note: This code (shown in <code><a href = "./code/test_fashion.py">test_fashion.py</a></code>,<code><a href = "./code/test_resnet.py">test_resnet.py</a></code>) will not run in (<code>jupyter|google colab</code>) notebook(s). This is because our code defaults to using `asyncio` for batch generation for speed. Hence, if you absolutely have to run in a notebook, please create your own batch generation code.
 	</div>
 </details>
 
