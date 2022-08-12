@@ -63,6 +63,13 @@ Python 3.8.x and newer are supported:
 	</ul>
 </details>
 
+<details>
+	<summary>Docker Setup</summary>
+	<ul>
+		<li> Build image: <code>docker build -t coshnet-docker:latest .</code> (Some systems might require running this in `sudo` mode.)</li>
+	</ul>
+</details>
+
 # Contents
 <div>
 <details>
@@ -82,7 +89,7 @@ Python 3.8.x and newer are supported:
 
 # How to Run?
 <details>
-	<summary>Running Instructions</summary>
+	<summary>Running in Local</summary>
 	<code>cd <a href = "./code/">code/</a></code>. Following are the possible cases:
 	<div>
 	<ol>
@@ -95,6 +102,15 @@ Python 3.8.x and newer are supported:
 		Note: This code (shown in <code><a href = "./code/test_fashion.py">test_fashion.py</a></code>,<code><a href = "./code/test_resnet.py">test_resnet.py</a></code>) will not run in (<code>jupyter|google colab</code>) notebook(s). This is because our code defaults to using `asyncio` for batch generation for speed. Hence, if you absolutely have to run in a notebook, please create your own batch generation code.
 	</div>
 </details>
+
+<details>
+	<summary>Running in Docker</summary>
+	<ul>
+		<li>Run Image: <code>docker run coshnet-docker:latest</code> (Some systems might require running this in `sudo` mode.)</li>
+	</ul>
+	Note: The above is a brief demo for running our codebase in a docker. If you want to do something specific, e.g. deliver an API endpoint through a docker, you will have to edit the <code><a href = "./Dockerfile">Dockerfile</a></code> 
+</details>
+
 
 # Some Results
 | Model | Epochs | Parameters | Size Ratio | Top-1 Accuracy (60k)| Top-1 Accuracy (10k) |
