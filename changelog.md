@@ -18,8 +18,8 @@
 
 
 ## TODO:
-- [ ] To make docker run.
-- [ ] To make both the sequential runs into a shell file and put as final run command.
+- [x] To make docker run.
+- [x] To make both the sequential runs into a shell file and put as final run command.
 
 ## Note to devs:
 1. Leaving concept of `colorspace in shnetutil`. It will be easy if we want to iteratively add stuff to this, but if we donot, having it in, does not hurt and saves us trouble to refactor.
