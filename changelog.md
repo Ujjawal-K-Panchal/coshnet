@@ -8,9 +8,6 @@
 
 ## Branch PR changes:
 
-`develop` -> `rel-test`:
-	- [x] First releasable version almost ready. 
-
 ## Important Abbreviations:
 	- `TODO`: Each `TODO` denotes something that is incomplete or in-progress. It will be improved in future when bandwidth and time permits.
 
