@@ -1,0 +1,6 @@
+data/
+imgs/
+venv4*/
+**/build/
+**/__pycache__/
+*.egg-info/
