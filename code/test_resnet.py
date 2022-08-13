@@ -33,6 +33,9 @@ from pyutils import testutil
 plt.ion()
 
 
+
+
+
 class PseudoValidateBase():
 	def __init__(self):
 		self.resetScores()
@@ -208,7 +211,7 @@ def resnet_testloop(
 	model: torch.nn.Module,
 	batchsize = 128,
 	testmode = 0,
-	device = torch.device('cuda:0'),
+	device = torchutils.onceInit(kCUDA = torch.cuda.is_available(), seed = 42),
 	runtag='',
 	klog = False,
 	batchbuilder: batch.BatchBuilderBase = None,
@@ -269,7 +272,7 @@ if __name__ == "__main__":
 	validate = 1.0 #validate set size.
 	lr = 0.001
 	lr_schedule = args.lr_schedule
-	device = torchutils.onceInit(kCUDA = True, seed=seed)
+	device = torchutils.onceInit(kCUDA = torch.cuda.is_available(), seed=seed)
 	classes = ('T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal',
 	           'Shirt', 'Sneaker', 'Bag', 'Ankle Boot')
 	pyfilename = Path(__file__)
@@ -357,7 +360,7 @@ if __name__ == "__main__":
 		model,
 		batchsize = 128,
 		testmode = 0,
-		device = torch.device('cuda:0'),
+		device = device,
 		runtag='',
 		klog = True,
 		batchbuilder = None,

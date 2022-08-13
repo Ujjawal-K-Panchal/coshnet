@@ -84,6 +84,7 @@ def CoShNetAugmentations(
 	coshrem_args: BaseModel = ksh_spec,
 ) -> augmentation.Sequential:
 	""" The standard augmentation pipeline we use for our training CoShNet """
+	coshrem_args = ksh_spec if coshrem_args == None else coshrem_args
 	auglist = [
 		augmentation.Normalize(mean, std),		#10K1E: 79.7%, 10K4E: 86.9%, 10K10E: 87.6%	
 		augmentation.Pad([(0,0), (2,2), (2,2)]),		  

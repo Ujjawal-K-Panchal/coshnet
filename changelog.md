@@ -8,9 +8,6 @@
 
 ## Branch PR changes:
 
-`develop` -> `rel-test`:
-	- [x] First releasable version almost ready. 
-
 ## Important Abbreviations:
 	- `TODO`: Each `TODO` denotes something that is incomplete or in-progress. It will be improved in future when bandwidth and time permits.
 
@@ -18,6 +15,8 @@
 
 
 ## TODO:
+- [x] To make docker run.
+- [x] To make both the sequential runs into a shell file and put as final run command.
 
 ## Note to devs:
 1. Leaving concept of `colorspace in shnetutil`. It will be easy if we want to iteratively add stuff to this, but if we donot, having it in, does not hurt and saves us trouble to refactor.
