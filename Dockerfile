@@ -17,7 +17,7 @@ RUN ls
 
 WORKDIR ./code/
 RUN ls
-RUN ../venv4coshnet/bin/python test_fashion.py --epoch 1
-RUN ../venv4coshnet/bin/python test_resnet.py --epoch 1
+RUN ../venv4coshnet/bin/python test_fashion.py --epoch 10 --validate 1 --snapshot coshnet-fashion 
+RUN ../venv4coshnet/bin/python test_resnet.py --epoch 10
 
-CMD ["echo", "ran successfully!"]
+CMD ../venv4coshnet/bin/python test_loadmodels.py --snapshot coshnet-fashion
