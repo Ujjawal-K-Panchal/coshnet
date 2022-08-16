@@ -1,5 +1,5 @@
 <div align="center">
-	<a href = "https://arxiv.org/">
+	<a href = "https://arxiv.org/abs/2208.06882">
 		<img width = "300" src = "./imgs/coshnet-logo.svg"></a></img>
 		
 <div><p>Authors: Manny Ko, Ujjawal K. Panchal, Héctor Andrade Loarca, Andres Mendez-Vazquez</p></div>
@@ -123,7 +123,18 @@ Python 3.8.x and newer are supported:
 _Note: 60k = train on train-set (60k observations), test on test-set (10k observations). 10k = vice-versa. K or k = 1000, M = Million._
 
 # Cite
-
+```bibtex
+@misc{coshnet2022,
+  doi = {10.48550/ARXIV.2208.06882},
+  url = {https://arxiv.org/abs/2208.06882},
+  author = {Ko, Manny and Panchal, Ujjawal K. and Andrade-Loarca, Héctor and Mendez-Vazquez, Andres},
+  keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  title = {CoShNet: A Hybird Complex Valued Neural Network using Shearlets},
+  publisher = {arXiv},
+  year = {2022},
+  copyright = {Creative Commons Attribution Non Commercial Share Alike 4.0 International}
+}
+```
 # License
 <div>
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
