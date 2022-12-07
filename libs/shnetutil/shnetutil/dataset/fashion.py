@@ -37,8 +37,9 @@ def load_fashion(
 	}
 	datasets_root = dispatch[datasetname]
 	print(datasets_root)
-	fashion_train = loadMNIST.getdb(datasets_root, istrain=True, kTensor = kTensor)
-	fashion_test = loadMNIST.getdb(datasets_root, istrain=False, kTensor = kTensor)
+	kFashion = (datasetname == "fashion")
+	fashion_train = loadMNIST.getdb(datasets_root, kFashion = kFashion, istrain=True, kTensor = kTensor)
+	fashion_test = loadMNIST.getdb(datasets_root, kFashion =  kFashion, istrain=False, kTensor = kTensor)
 	training_set, test_set = trainutils.getTrainTest(trset, fashion_train, fashion_test, useCDF=True)
 
 	#1: subset our training set?
