@@ -5,7 +5,7 @@ Title: Shearlet based CNN vs. simple MLP in Fashion MNIST.
 	
 Created on Mon Mar 16 17:44:29 2020
 
-@author: Ujjawal.K.Panchal & Manny Ko.
+@author: Héctor Andrade-Loarca & Ujjawal.K.Panchal & Manny Ko.
 
 debugged date: Sun Sep 19 14:07:17 2021.
 """
