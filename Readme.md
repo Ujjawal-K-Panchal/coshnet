@@ -9,7 +9,7 @@
 
 <details open>
 <summary>Architecture</summary>
-<img width = "850" src = "./imgs/CoShNet-TNR.png">
+<img width = "850" src = "https://github.com/Ujjawal-K-Panchal/coshnet/blob/main/imgs/CoShNet-TNR.png">
 
 CoShNet is a fully complex hybrid neural network. We use the CoShREM (now call SymFD) <code><a href>http://www.math.uni-bremen.de/cda/software.html</code>
 signal transform to produce a stable embedding. The network operates entirely in $\mathbb{C}$ domain to take advantage of unique properties of CVNNs.
