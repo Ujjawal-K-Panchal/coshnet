@@ -203,7 +203,7 @@ class CVnnRecipe(modelfactory.Recipe_base):
 	"""
 	modeltype: SupportedModels = SupportedModels.kCoShCVNN
 	conv2d: ConvLayers	 = ConvLayers.kSplitConv		#defaults to Ivan's 
-	conv_config: List[tuple] = [
+	conv_config: List[Union[CVnn_base.Conv2dDesc, CVnn_base.AvgPool2dDesc]] = [
 								CVnn_base.Conv2dDesc(20, 30, 5, 1), CVnn_base.AvgPool2dDesc(2,2),
 								CVnn_base.Conv2dDesc(30, 50, 5, 1), CVnn_base.AvgPool2dDesc(2,2)
 					]

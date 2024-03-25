@@ -205,7 +205,7 @@ class CoShCVNN(CVnn_base.CVnn_Base):
 			if dropout > 0.0:
 				layer_dict[f"dropout-conv{i}"] = cplxnn.modules.extra.CplxDropout(dropout)
 		else:
-			raise Exception(f"Description of {type(shape)=} is not supported. Supported types include ({CVnn_Base.Conv2dDesc}, {CVnn_Base.AvgPool2dDesc}).")
+			raise Exception(f"Description of {type(shape)=} is not supported. Supported types include ({CVnn_base.Conv2dDesc}, {CVnn_base.AvgPool2dDesc}).")
 		return layer_dict
 
 
