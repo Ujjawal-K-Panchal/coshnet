@@ -9,7 +9,7 @@ import copy
 from collections import namedtuple
 from collections.abc import KeysView
 from typing import Callable, List, Tuple, Optional, Union
-from pydantic import BaseModel, ValidationError, validator, root_validator
+from pydantic import BaseModel, ValidationError, validator, model_validator
 
 import torch
 
@@ -210,14 +210,15 @@ class CVnnRecipe(modelfactory.Recipe_base):
 	linear: LinearLayers = LinearLayers.kSplitLinear
 	init: Callable 	 	 = cplx_trabelsi_standard_
 	probtype: ProbabilityKind = ProbabilityKind.kReal	#real or complex probability
-	mlp_config = kCVnnMLPrecipe 	# = [(5 * 5 * 50, 500), (500, 10), (20, 10)]
+	mlp_config: CVnnMLPrecipe = kCVnnMLPrecipe 	# = [(5 * 5 * 50, 500), (500, 10), (20, 10)]
 	activation: Activations = Activations.kReLU
 	colorspace: Colorspaces = Colorspaces.grayscale
 	name: Optional[str] = None
-	@root_validator
+	@model_validator(mode='after')
 	@classmethod
 	def check_settings(cls, values):
-		if (not values.get('init') in kInitFuncs):
+		init_function = getattr(values, 'init', None)
+		if init_function not in kInitFuncs:
 			raise(InitFuncError(f"{values.get('init').__name__} is not a valid func."))
 		return values
 
