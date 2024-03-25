@@ -8,7 +8,7 @@ pytest
 ./libs/tt-pytorch
 ./libs/shnetutil
 scipy
-sklearn
+scikit-learn
 scikit-image
 joblib
 numba
