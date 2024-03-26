@@ -3,9 +3,9 @@ Python 3.8.5
 
 1. python -m pip install --upgrade pip.
 2. python -m venv venv4coshnet
-3. activate venv4shearlets
-   mac/linux: source venv4shearlets/bin/activate
-   win10: venv4shearlets\Scripts\activate
+3. activate venv4coshnet
+   mac/linux: source venv4coshnet/bin/activate
+   win10: venv4coshnet\Scripts\activate
 Note: it is very important to locate venv directly under `root`. Some path logic relies on it.
 
 4. pip install wheel (should be part of Miniconda 3.8x if on win10)
